@@ -21,7 +21,7 @@
   </dmn:inputData>
   <dmn:decision id="_359750E7-F10D-4261-9E20-CB7FC5AC4484" name="Decision">
     <dmn:extensionElements/>
-    <dmn:variable id="_FB41FBBC-535A-4750-9B69-007755ABAFCB" name="Decision"/>
+    <dmn:variable id="_FB41FBBC-535A-4750-9B69-007755ABAFCB" name="Decision" typeRef="boolean"/>
     <dmn:informationRequirement id="_201879FA-DCC0-4D18-B781-6DB9068E5248">
       <dmn:requiredInput href="#_2CBE3984-666E-4B71-8C33-24140794755A"/>
     </dmn:informationRequirement>
