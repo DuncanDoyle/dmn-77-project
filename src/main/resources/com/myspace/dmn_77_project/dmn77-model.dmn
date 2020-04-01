@@ -29,7 +29,7 @@
       <dmn:requiredInput href="#_43F77A82-1C70-4D80-9BA5-DE1EBA5C7468"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_99A6AF5E-C226-458C-B335-0CE99E3C5493">
-      <dmn:text>contains(Person.name, "Duncan") and Status == "Gold"</dmn:text>
+      <dmn:text>contains(Person.name, "Duncan") and Status = "Gold"</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_2CBE3984-666E-4B71-8C33-24140794755A" name="Status">
