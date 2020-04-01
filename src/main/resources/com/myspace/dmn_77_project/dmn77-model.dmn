@@ -1,11 +1,85 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_49125329-2A9B-416F-8ACE-85E82C00A0B4" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_2F7C32A8-590B-4D1A-904F-E7209D7CC98D" name="dmn77-model" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_49125329-2A9B-416F-8ACE-85E82C00A0B4">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_277D0823-D556-4480-A855-3F1C590A31D1" name="Status" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="enumeration" id="_476D2CFD-7C26-46DD-846E-D53C482B86F9">
+      <dmn:text>"Gold", "Platinum"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_AB9A6F6C-C56F-4A6D-833F-4F12C5270D42" name="Person" isCollection="false">
+    <dmn:itemComponent id="_008C8607-8C1D-4965-B84F-2F4180835775" name="age" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_6EFFDF7E-C3E7-4588-A6E2-4E6BED4C9788" name="name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_43F77A82-1C70-4D80-9BA5-DE1EBA5C7468" name="Person">
+    <dmn:extensionElements/>
+    <dmn:variable id="_9902864C-1FC4-4520-8916-119396DE2DC3" name="Person" typeRef="Person"/>
+  </dmn:inputData>
+  <dmn:decision id="_359750E7-F10D-4261-9E20-CB7FC5AC4484" name="Decision">
+    <dmn:extensionElements/>
+    <dmn:variable id="_FB41FBBC-535A-4750-9B69-007755ABAFCB" name="Decision"/>
+    <dmn:informationRequirement id="_201879FA-DCC0-4D18-B781-6DB9068E5248">
+      <dmn:requiredInput href="#_2CBE3984-666E-4B71-8C33-24140794755A"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_177CFF91-0630-4C35-B284-04F521BD84F4">
+      <dmn:requiredInput href="#_43F77A82-1C70-4D80-9BA5-DE1EBA5C7468"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression id="_99A6AF5E-C226-458C-B335-0CE99E3C5493">
+      <dmn:text>contains(Person.name, "Duncan") &amp;&amp; Status == "Gold"</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:inputData id="_2CBE3984-666E-4B71-8C33-24140794755A" name="Status">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6A99C484-FCC5-41F8-A66B-2BBFF1A542D3" name="Status" typeRef="Status"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_99A6AF5E-C226-458C-B335-0CE99E3C5493">
+            <kie:width>867.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_43F77A82-1C70-4D80-9BA5-DE1EBA5C7468" dmnElementRef="_43F77A82-1C70-4D80-9BA5-DE1EBA5C7468" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="566" y="321" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_359750E7-F10D-4261-9E20-CB7FC5AC4484" dmnElementRef="_359750E7-F10D-4261-9E20-CB7FC5AC4484" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="460" y="139" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_2CBE3984-666E-4B71-8C33-24140794755A" dmnElementRef="_2CBE3984-666E-4B71-8C33-24140794755A" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="352.5981308411215" y="327" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_201879FA-DCC0-4D18-B781-6DB9068E5248" dmnElementRef="_201879FA-DCC0-4D18-B781-6DB9068E5248">
+        <di:waypoint x="402.5981308411215" y="352"/>
+        <di:waypoint x="510" y="164"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_177CFF91-0630-4C35-B284-04F521BD84F4" dmnElementRef="_177CFF91-0630-4C35-B284-04F521BD84F4">
+        <di:waypoint x="616" y="346"/>
+        <di:waypoint x="510" y="189"/>
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </dmn:definitions>
